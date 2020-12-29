@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', canActivate: [AuthguardService], component: HomeComponent },
   { path: 'articles/lists', canActivate: [AuthguardService], component: ListArticlesComponent },
   { path: 'article/add', canActivate: [AuthguardService], component: AddArticleComponent },
-  { path: 'article/edit/:id', canActivate: [AuthguardService], component: EditArticleComponent },
+  { path: 'article/edit', canActivate: [AuthguardService], component: EditArticleComponent },
   { path: '**', redirectTo: "" }
 ];
 

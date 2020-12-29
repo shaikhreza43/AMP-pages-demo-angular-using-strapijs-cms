@@ -16,6 +16,7 @@ import { AddArticleComponent } from './add-article/add-article.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatIconModule } from "@angular/material/icon";
+import { TokenInterceptor } from './interceptor';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,12 @@ import { MatIconModule } from "@angular/material/icon";
     MatIconModule
   ],
   providers: [
-    AuthguardService
+    AuthguardService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })

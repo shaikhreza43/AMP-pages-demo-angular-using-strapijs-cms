@@ -14,7 +14,7 @@
                     <td>{{article.id}}</td>
                     <td>{{article.title}}</td>
                     <td class="text-justify">{{article.body}}</td>
-                    <td><a href="/article/edit/{{article.id}}">Edit</a> | <a href="javascript:void(0)" (click)="deleteArticleById(article.id)">Delete</a></td>
+                    <td><a href="/article/edit?id={{article.id}}">Edit</a> | <a href="javascript:void(0)" (click)="deleteArticleById(article.id)">Delete</a></td>
                 </tr>
             </tbody>
         </table>
