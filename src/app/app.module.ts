@@ -15,6 +15,7 @@ import { ListArticlesComponent } from './list-articles/list-articles.component';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatIconModule
   ],
   providers: [
     AuthguardService

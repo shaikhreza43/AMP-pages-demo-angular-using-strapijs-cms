@@ -11,10 +11,22 @@ export class LoginComponent implements OnInit {
 
   public username:any = '';
   public password:any='';
+  hide:boolean = true;
 
   constructor(private toaster:ToastrService,private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  changePwdToTxtAndViceVersa(){
+    this.hide = !this.hide
+    var x = document.getElementById('password').getAttribute('type');
+    if(x==='password'){
+      document.getElementById('password').setAttribute('type','text');
+    }
+    else if(x==='text'){
+      document.getElementById('password').setAttribute('type','password');
+    }
   }
 
   onSubmit(){
