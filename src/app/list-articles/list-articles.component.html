@@ -1,0 +1,30 @@
+<app-header>
+    <div class="mt-4">
+        <h2>Articles</h2>
+
+        <table class="table table-striped">
+            <thead>
+                <th>#</th>
+                <th>Article Title</th>
+                <th>Article Body</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let article of articles | paginate: { itemsPerPage: 5, currentPage: p }; let i = index;">
+                    <td>{{article.id}}</td>
+                    <td>{{article.title}}</td>
+                    <td class="text-justify">{{article.body}}</td>
+                    <td><a href="/article/edit/{{article.id}}">Edit</a> | <a href="javascript:void(0)" (click)="deleteArticleById(article.id)">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div *ngIf="articles.length===0" style="display: flex;justify-content: center;align-items: center;">
+            <h4>No Articles Available to Show.Please Add One</h4>
+        </div>
+
+        <div style="display: flex;justify-content: center;align-items: center;margin-top: 30px;">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</app-header>

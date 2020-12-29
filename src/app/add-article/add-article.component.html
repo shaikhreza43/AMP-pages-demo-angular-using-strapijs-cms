@@ -1,0 +1,24 @@
+<app-header>
+    <div class="row mt-5 d-flex flex-direction-column justify-content-center">
+        <div class="col-lg-7">
+            <div class="mt-4">
+                <h2 class="mb-4">Add Article</h2>
+                <form class="form" (ngSubmit)="addArticle()">
+                    <div class="form-group">
+                        <label for="title">Article Title</label>
+                        <input type="text" name="title" id="title" placeholder="Enter Article Title"
+                            class="form-control" [(ngModel)]="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="body">Article Body</label>
+                        <textarea type="text" cols="30" rows="10" name="body" id="body" placeholder="Enter Article Body"
+                            class="form-control" [(ngModel)]="body"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+</app-header>
